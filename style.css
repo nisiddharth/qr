@@ -83,6 +83,8 @@ label {
 #qr {
     margin: 0 auto;
     width: 320px;
+    max-width: 100%;
+    height: auto;
     padding: 6px;
     box-sizing: border-box;
     border-radius: 12px;
