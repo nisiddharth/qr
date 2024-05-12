@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
+
+:root {
+    /* gruvbox colors*/
+    --blue: #458588;
+    --purple: #b16286;
+    --red: #cc241d;
+    --orange: #d65d0e;
+    --yellow: #d79921;
+    --green: #98971a;
+    --aqua: #689d6a;
+    --fg: #ebdbb2;
+    --gray: #a89984;
+    --bg: #282828;
+    --bg1: #3c3836;
+    --border: rgba(235, 219, 178, 0.2);
+    --hinting: rgba(104, 157, 106, 0.2);
+    --ruler: rgba(0, 0, 0, .1);
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-monospace: 'Iosevka', 'Nanum Gothic Coding', 'Fira Code', 'Jetbrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html {
+    font-family: var(--font-family-monospace);
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center;
+    color: var(--yellow);
+}
+
+h2 span {
+    font-size: 14px;
+}
+
+.extra-small-text {
+    font-size: 12px;
+    font-style: italic;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--orange);
+}
+
+#qr {
+    margin: 0 auto;
+    width: 320px;
+    padding: 6px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background-color: var(--bg1);
+}
+
+input {
+    background-color: var(--bg1);
+    color: var(--fg);
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-family: var(--font-family-monospace);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 3px var(--yellow);
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    color: var(--gray);
+    background-color: var(--gray);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid var(--ruler)
+}
+
+a {
+    color: var(--aqua);
+    text-decoration: none;
+    background-color: transparent
+}
+
+a:hover {
+    color: var(--aqua);
+    text-decoration: underline
+}
+
+a:not([href]) {
+    color: inherit;
+    text-decoration: none
+}
+
+a:not([href]):hover {
+    color: inherit;
+    text-decoration: none
+}

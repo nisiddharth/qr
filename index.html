@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="QR Encode" />
+    <meta name="author" content="Nishchal Siddharth" />
+    <meta name="keywords" content="QR,qr,QR Encode,qr encode,qrencode,query,URL,URI,data" />
+    <meta name="image" content="https://nishchal.one/qr/qr-full.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nishchal.one/qr/">
+    <meta property="og:title" content="QR Encode">
+    <meta property="og:description" content="Encode data by passing in query param">
+    <meta property="og:image" content="https://nishchal.one/qr/qr-full.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="QR Encode">
+    <meta property="twitter:creator" content="@nisiddharth">
+    <meta property="twitter:title" content="Nishchal Siddharth">
+    <meta property="twitter:description" content="QR Encode">
+    <meta property="twitter:image" content="https://nishchal.one/qr/qr-full.png">
+
+    <title>QR Encode</title>
+    <link rel="icon" href="./qr.png" />
+    <style>
+        tbody td:first-child {
+            min-width: 2em;
+            max-width: 2em;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1><i class="fa-solid fa-qrcode"></i> QR Encode</h1>
+        <input id="data-input" placeholder="Enter data" />
+        <br><br><br>
+        <div id=qr></div>
+        <br><br>
+        <p>
+            You can pass data as URL query param to this webpage.
+            <br>
+            E.g., <a href="https://nishchal.one/qr/?something to encode"
+                target="_blank">https://nishchal.one/qr/?something%20to%20encode</a>
+            will encode "<i>something%20to%20encode</i>"
+        </p>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="extra-small-text">
+                <p><b><a href="https://github.com/nisiddharth/qr" target="_blank">Source code <i
+                                class="fa-brands fa-github"></i></b></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="qrcode.js"></script>
+    <script>
+        var inputData = location.search.substr(1);
+
+        var width = 1080;
+        var style = getComputedStyle(document.body);
+        var qrCode = new QRCode("qr", {
+            text: inputData || "https://nishchal.com",
+            width: width,
+            height: width,
+            output: "canvas",
+            colorDark: style.getPropertyValue('--fg'),
+            colorLight: style.getPropertyValue('--bg1'),
+            correctLevel: QRCode.CorrectLevel.H,
+        });
+
+        var input = document.getElementById("data-input");
+
+        input.focus();
+
+        input.value = inputData;
+
+        var oldValue = input.value;
+        input.addEventListener("keyup", function () {
+            if (this.value !== oldValue)
+                qrCode.makeCode(this.value);
+            oldValue = this.value;
+        });
+    </script>
+    <noscript>Sorry, but this webpage needs JavaScript for it to function.</noscript>
+</body>
+
+</html>
