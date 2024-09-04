@@ -88,7 +88,7 @@ label {
     padding: 6px;
     box-sizing: border-box;
     border-radius: 12px;
-    background-color: var(--bg1);
+    background-color: var(--fg);
 }
 
 input {
